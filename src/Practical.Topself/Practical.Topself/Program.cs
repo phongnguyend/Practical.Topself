@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace Practical.Topself
     {
         static void Main(string[] args)
         {
+            var config = (QueueConfiguration)ConfigurationManager.GetSection("queueConfiguration");
+
             HostFactory.Run(c =>
             {
                 c.Service<DemoService>(service =>

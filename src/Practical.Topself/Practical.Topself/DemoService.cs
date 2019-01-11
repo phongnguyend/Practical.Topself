@@ -26,10 +26,22 @@ namespace Practical.Topself
             Console.WriteLine(e.Cancelled);
             Console.WriteLine(e.Error);
             Console.WriteLine(e.Result);
+
+            //if (e.Error != null)
+            //{
+            //    throw e.Error;
+            //}
         }
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            //var optionsBuilder = new DbContextOptionsBuilder();
+            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ClassifiedAds"].ConnectionString);
+            //using (var dbct = new AdsDbContext(optionsBuilder.Options))
+            //{
+            //    var users = dbct.Users.ToList();
+            //}
+
             string input = "";
             while (!_worker.CancellationPending)
             {
